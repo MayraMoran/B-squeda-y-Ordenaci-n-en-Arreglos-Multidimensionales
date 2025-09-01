@@ -1,0 +1,30 @@
+# Programa 1: Búsqueda en Arreglo Multidimensional
+
+# Definimos una matriz 3x3
+matriz = [
+    [5, 8, 2],
+    [9, 4, 7],
+    [6, 3, 1]
+]
+
+def buscar_valor(matriz, valor):
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if matriz[i][j] == valor:
+                return True, (i, j)  # Retorna fila y columna si lo encuentra
+    return False, None
+
+# Valor a buscar
+valor_buscado = 4
+
+# Ejecutar búsqueda
+encontrado, posicion = buscar_valor(matriz, valor_buscado)
+
+print("Matriz:")
+for fila in matriz:
+    print(fila)
+
+if encontrado:
+    print(f"\n✅ El valor {valor_buscado} fue encontrado en la posición (fila {posicion[0]}, columna {posicion[1]}).")
+else:
+    print(f"\n❌ El valor {valor_buscado} no se encuentra en la matriz.")
